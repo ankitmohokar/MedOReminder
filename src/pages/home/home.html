@@ -1,17 +1,73 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title text-center="true" class="font">Med-O-Reminder</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <ion-card>
+    <ion-card-header>
+      Enter Medicines and reminder here!
+    </ion-card-header>
+    <ion-card-content>
+
+      <ion-list>
+        <ion-item>
+          <ion-label color="primary">Medicine Name:</ion-label>
+          <ion-input placeholder="Medicine.." [(ngModel)]="medname" ></ion-input>
+        </ion-item>
+          <h2>When do you have to take this medicine?</h2>
+        <ion-item>
+          <ion-label color="primary">Hour:</ion-label>
+          <ion-input placeholder="Enter hour" [(ngModel)]="hours" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary">Minutes:</ion-label>
+          <ion-input placeholder="Enter minutes" [(ngModel)]="min" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary">Seconds:</ion-label>
+          <ion-input placeholder="Enter seconds" [(ngModel)]="sec"></ion-input>
+        </ion-item>
+
+
+
+
+<!--
+        <ion-item>
+          <ion-label>Breakfast</ion-label>
+          <ion-checkbox [(ngModel)]="morning"></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Lunch</ion-label>
+          <ion-checkbox [(ngModel)]="Lunch"></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Dinner</ion-label>
+          <ion-checkbox [(ngModel)]="Dinner"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-input type="number" placeholder="Any other time? HH:mm:ss"></ion-input>
+        </ion-item>-->
+      </ion-list>
+      <br>
+      <button ion-button (click)="remindNotification()">Set Reminder</button>
+    </ion-card-content>
+
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      This was your Previous Reminder:
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <h2>Medicine Name: {{medname}}</h2>
+          <p>Reminder set for {{hours}}:{{min}}:{{sec}}.</p>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

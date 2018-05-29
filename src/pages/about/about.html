@@ -1,11 +1,69 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      About
+    <ion-title text-center="true" class="font">
+      Med-O-Reminder
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      Add Appointments here!
+    </ion-card-header>
+    <ion-card-content>
 
-</ion-content>
+    <ion-label color="primary">Appointment Name</ion-label>
+      <ion-input placeholder="Appointment.." [(ngModel)]="aptname"></ion-input>
+      <ion-label color="primary">Location</ion-label>
+      <ion-input placeholder="Location.." [(ngModel)]="loc"></ion-input>
+      <ion-label color="primary">Notes</ion-label>
+      <ion-input placeholder="Notes.." [(ngModel)]="notes"></ion-input>
+
+      <ion-item>
+        <ion-label item-start>Start Date: </ion-label>
+        <ion-input placeholder="Year" [(ngModel)]="saptyr"></ion-input>
+        <ion-input [(ngModel)]="saptmth" placeholder="Month"></ion-input>
+        <ion-input  item-end [(ngModel)]="saptdate" placeholder="Date"></ion-input>
+      </ion-item><br>
+      <ion-item>
+        <ion-label item-start>Start Time: </ion-label>
+        <ion-input [(ngModel)]="sapthr" placeholder="Hour"></ion-input>
+        <ion-input item-end [(ngModel)]="saptmin" placeholder="Minute"></ion-input>
+      </ion-item><br>
+      <ion-item>
+        <ion-label item-start>End Date: </ion-label>
+        <ion-input placeholder="Year" [(ngModel)]="eaptyr"></ion-input>
+        <ion-input [(ngModel)]="eaptmth" placeholder="Month"></ion-input>
+        <ion-input  [(ngModel)]="eaptdate" placeholder="Date"></ion-input>
+      </ion-item><br>
+      <ion-item>
+        <ion-label item-start>End Time: </ion-label>
+        <ion-input  [(ngModel)]="eapthr" placeholder="Hour"></ion-input>
+        <ion-input item-end [(ngModel)]="eaptmin" placeholder="Minute"></ion-input>
+      </ion-item>
+
+
+ <!-- <h2>Date and Time: </h2><ion-datetime displayFormat="DD-MM-YYYY HH:mm" [(ngModel)]="today"></ion-datetime>-->
+      <br> <button ion-button (click)="setAppointment()">Set Appointment Reminder</button>
+    </ion-card-content>
+  </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        Previous Appointment
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <h2>Appointment: {{aptname}}</h2>
+            <h2>Location: {{loc}}</h2>
+
+            <p>Date: {{saptyr}}:{{saptmth}}:{{saptdate}}</p>
+          </ion-item>
+
+
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
